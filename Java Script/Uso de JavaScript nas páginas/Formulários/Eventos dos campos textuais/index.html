@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = () => {
+        nome.onchange = () => console.log('change', nome.value);
+
+        nome.oninput = () => {
+          nome.value = nome.value.toUpperCase();
+          if (
+            '!@#$%¨&*()_+,.;~]´[<>:^`{}'.indexOf(
+              nome.value.charAt(nome.value.length - 1)
+            ) >= 0
+          )
+            nome.value = nome.value.substr(0, nome.value.length - 1);
+        };
+
+        senha.onchange = () => console.log(senha.value);
+
+        nome.onfocus = () => {
+          instrucoes.innerHTML = 'Informe o seu nome';
+          instrucoes.style.color = '#999';
+        };
+
+        nome.onblur = () => {
+          if (nome.value.length == 0) {
+            instrucoes.innerHTML = '*';
+            instrucoes.style.color = '#F00';
+            nome.style.border = 'thin red solid';
+          } else instrucoes.innerHTML = '';
+        };
+      };
+    </script>
+  </head>
+
+  <body>
+    <form action="login.php" method="post">
+      <p>
+        <label for="nome">Nome: </label>
+        <input type="text" id="nome" name="nnome" autocomplete="off" />
+        <span id="instrucoes"></span>
+      </p>
+      <p>
+        <label for="sena">Senha: </label>
+        <input type="password" id="senha" name="nsenha" />
+      </p>
+      <p><button type="submit">Enviar</button></p>
+    </form>
+  </body>
+</html>

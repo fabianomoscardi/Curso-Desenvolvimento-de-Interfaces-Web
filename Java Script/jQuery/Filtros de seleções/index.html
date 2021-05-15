@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.5.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            let lista = $('.lista').add('titulo');
+            /* $('.lista').fitler('.teste').addClass('marcado');
+         });*/
+            $('.lista').fitler(function () {
+                return $(this).atrr('id');
+            });
+            console.log(lista);
+    </script>
+    <style>
+        .marcado {
+            background-color: #ffaaaa
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="titulo">jQuery</h1>
+    <ul>
+        <li class="lista" id="l1">Item 1</li>
+        <li class="lista" id="l2"><strong>Item 2</strong></li>
+        <li class="lista" id="l3">Item 3</li>
+        <li class="lista" id="l4"><strong>Item 4</strong></li>
+        <li class="lista" id="l5">Item 5</li>
+    </ul>
+</body>
+
+</html>

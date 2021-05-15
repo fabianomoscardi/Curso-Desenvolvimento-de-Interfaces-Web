@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Pedidos de Sadala</title>
+    <meta charset="utf-8" />
+    <script>
+      window.onload = () => {
+        nome.onchange = () => console.log('nome', 'change', nome.value);
+        salada.onchange = () => console.log('salada', 'change', salada.value);
+        let eventoMolho = () => {
+          console.log('molho1', 'change', molho1.checked);
+          console.log('molho2', 'change', molho2.checked);
+          console.log('molho3', 'change', molho3.checked);
+        };
+        molho1.onchange = eventoMolho;
+        molho2.onchange = eventoMolho;
+        molho3.onchange = eventoMolho;
+        pao.onchange = () => console.log('pao', 'change', pao.checked);
+        sobremesa.onchange = () =>
+          console.log('sobremesa', 'change', sobremesa.checked);
+      };
+    </script>
+  </head>
+  <body>
+    <p>
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nnome" />
+    </p>
+    <p>
+      <label for="salada">Salada</label>
+      <select id="salada" name="nsalada">
+        <option value="0" selected>Verde (folhas e palmito)</option>
+        <option value="1">Caprese</option>
+        <option value="2">Caesar</option>
+        <option value="3">Rúcula e pêras</option>
+        <option value="4">Salmão</option>
+        <option value="4">Frango</option>
+      </select>
+    </p>
+    <p>
+      Molho:
+      <input type="radio" id="molho1" name="nmolho" value="0" checked />
+      <label for="molho1">Nenhum</label>
+      <input type="radio" id="molho2" name="nmolho" value="1" />
+      <label for="molho2">Mostarda e mel</label>
+      <input type="radio" id="molho3" name="nmolho" value="2" />
+      <label for="molho3">Queijos</label>
+    </p>
+    <p>
+      Complementos:
+      <label for="pao">Pão</label>
+      <input type="checkbox" id="pao" name="npao" checked />
+      <label for="pao">Pão francês</label>
+      <input type="checkbox" id="sobremesa" name="nsobremesa" />
+      <label for="sobremesa">Sobremesa</label>
+    </p>
+  </body>
+</html>

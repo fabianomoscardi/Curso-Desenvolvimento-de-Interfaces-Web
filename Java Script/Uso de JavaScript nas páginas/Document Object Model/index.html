@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = () => {
+        let intro = document.getElementById('introducao');
+        intro.style.textAlign = 'center';
+        intro.style.fontWeight = 'bold';
+        intro.style.border = 'thin solid black';
+        intro.style.padding = '10px 5px';
+        intro.style.backgroundColor = '#DDF';
+        bt.onclick = () => {
+          let lista = document.getElementById('lista');
+          lista.innerHTML += '<li>item</li>';
+          let list = document.querySelector('#lista');
+          list.style.color = 'red';
+        };
+        let li = document.querySelectorAll('li');
+        console.log(li);
+      };
+    </script>
+  </head>
+  <body>
+    <p id="introducao">Bem-vindos ao curso de JavaScript.</p>
+    <ul id="lista">
+      <li id="l1">1º Item</li>
+      <li id="l2">2º Item</li>
+      <li id="l3">3º Item</li>
+    </ul>
+    <ul id="Lista">
+      <li>4º item</li>
+    </ul>
+    <p><button id="bt">+</button></p>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Login</title>
+    <meta charset="utf-8" />
+    <script>
+      window.onload = () => {
+        btn_submit.disabled = true;
+        nome.onchange = () => {
+          if (nome.value.length == 0 || senha.value.length == 0)
+            btn_submit.disabled = false;
+        };
+        nome.oninput = validaForm;
+        senha.oninput = validaForm;
+      };
+      login.onsubmit = () => {
+        console.log({ nome: nome.value, senha: senha.value });
+        console.log(evento.target);
+        evento.preventDefault();
+        return true;
+      };
+      if (nome.value.length == 0 || senha.value.length == 0) {
+        alert('Campos não podem ficar em brancos');
+        console.log(evento);
+        return false;
+      }
+    </script>
+
+    <style>
+      label {
+        font-size: 50px;
+      }
+
+      #btn_submit {
+        width: 500px;
+        height: 50px;
+      }
+
+      #senha,
+      #nome {
+        height: 30px;
+        width: 500px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form id="login" method="post" action="https://postman-echo.com/post">
+      <p>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nnome" autocomplete="off" />
+      </p>
+      <p>
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="nsenha" />
+      </p>
+      <p>
+        <label for="conectado">Permanecer conectado?</label>
+        <input type="checkbox" id="conectado" name="nconectado" />
+      </p>
+      <p><button type="submit">Confirmar</button></p>
+    </form>
+  </body>
+</html>

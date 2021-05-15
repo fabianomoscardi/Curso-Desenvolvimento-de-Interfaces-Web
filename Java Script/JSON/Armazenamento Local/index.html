@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <script>
+    onload = () => {
+      let u;
+      // nome.value = localStorage.getItem('username');
+      if ((u = localStorage.getItem('user'))) nome.value = JSON.parse(u).nome;
+      login.onsubmit = evento => {
+        let user = { nome: nome.value, senha: senha.value };
+        // console.log({ nome: nome.value, senha: senha.value });
+        // localStorage.setItem('username', nome.value);
+        localStorage.setItem('user', JSON.stringify(user)); // Permanente
+        /*sesssionStorage.setItem // Temporário*/
+        // getItem(chave);
+        // removeItem(chave);
+        // clear();
+        evento.preventDefault();
+        // nome.value = '';
+        // senha.value = '';
+      };
+    };
+  </script>
+
+  <body>
+    <form action="https://postman-echo.com/post" method="post" id="login">
+      <p>
+        <label for="nome" id="">Nome</label>
+        <input type="text" id="nome" name="nome" />
+      </p>
+
+      <p>
+        <label for="senha" id="">Senha</label>
+        <input type="password" id="senha" name="senha" />
+      </p>
+      <p>
+        <button type="submit">Confirmar</button>
+      </p>
+    </form>
+  </body>
+</html>

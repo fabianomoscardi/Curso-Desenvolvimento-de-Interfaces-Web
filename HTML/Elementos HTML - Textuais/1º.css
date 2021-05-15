@@ -1,0 +1,46 @@
+/*Associação pelo Nome do Elemento*/
+h1 {
+    color: red;
+}
+
+/*Associação pelo ID do Elemento*/  
+#tit_1 {    
+    font-size: 40px;
+}
+
+/*Associação pela classe do elemento*/ 
+.noticias {
+    font-family: arial;
+}
+p, h1 {
+    background-color: lightslategray;
+}
+th {
+    background-color: tomato;
+}
+td {
+    background-color: blue;
+}
+table {
+    width: 100%;
+}
+table caption {
+    font-weight: bolder;
+    font-size: 30px;
+}
+th {
+    background-color: gray;         
+}
+#Conteudo {
+    width: 70%;
+    background-color: blanchedalmond;
+    float: left;
+}
+#menu_contexto {
+    width: 70%;
+    background-color: lightblue;
+    float: left;
+}
+#Rodape {  
+    clear: both;
+}

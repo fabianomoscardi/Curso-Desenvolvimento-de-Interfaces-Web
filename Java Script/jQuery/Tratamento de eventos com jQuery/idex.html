@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.5.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            /* $('#btn').on('logou', function () {
+     alert('Você cliclou no botão');*/
+            $('#imagens > img').click(function (evento) {
+                $('#imagens > img').removeClass('selecionada')
+                $(this).addClass('selecionada');
+                console.log(evento.target.id);
+                /*evento.preventDefault();*/
+        });
+        });
+    </script>
+    <style>
+        img {
+            border: thick solid black;
+        }
+
+        .selecionada {
+            border-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="titulo">jQuery</h1>
+    <div id="imagens"></div>
+    <img id="imagem1" src="https://picsum.photos/100" alt="">
+    <img id="imagem2" src="https://picsum.photos/100" alt="">
+    <img id="imagem3" src="https://picsum.photos/100" alt="">
+</body>
+
+</html>
